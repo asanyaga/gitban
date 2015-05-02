@@ -1,0 +1,123 @@
+
+<div id ="board">
+  <ul class="stage_list">
+    <li class="stage to_do">
+    <h2 class="stage_head">To Do <%= @to_do_issues.count %></h2>
+    <ul class="card_list">
+      <% @to_do_issues.each do |to_do_issue| %>
+        <li class="stage_card">
+          <h3><%= to_do_issue.title%></h3>
+          <p class="priority">
+            <span class="priority_label ">PRIORITY</span>
+            <span class="priority_value <%= to_do_issue.priority %>"><%= to_do_issue.priority %></span>
+          </p>
+          <p class="assigned">
+            <span class="assiged_label">ASSIGNED</span>
+            <span class="assigned_value"><%= to_do_issue.assignee.name %></span>
+          </p>
+          <p class="category">
+            <span class="category_label">CATEGORY</span>
+            <span class="category_value">Enhancement</span>
+          </p>
+          <p class="days_open">
+            <span class="days_open_label">DAYS OPEN</span>
+            <span class="days_open_value"><%= to_do_issue.days_open %></span>
+          </p>
+        </li>
+      <% end %>
+    </ul>
+  </li>
+  <li class="stage stage in_progress">
+  <h2 class="stage_head">In Progress <%= @in_progress_issues.count %></h2>
+  <ul class="card_list">
+    <% @in_progress_issues.each do |in_progress_issue| %>
+      <li class="stage_card">
+        <h3><%= in_progress_issue.title%></h3>
+        <p class="priority">
+          <span class="priority_label">PRIORITY</span>
+          <span class="priority_value <%= in_progress_issue.priority %>"><%= in_progress_issue.priority %></span>
+        </p>
+        <p class="assigned">
+          <span class="assiged_label">ASSIGNED</span>
+          <span class="assigned_value"><%= in_progress_issue.assignee.name %></span>
+        </p>
+        <p class="category">
+          <span class="category_label">CATEGORY</span>
+          <span class="category_value">Enhancement</span>
+        </p>
+        <p class="days_open">
+          <span class="days_open_label">DAYS OPEN</span>
+          <span class="days_open_value"><%= in_progress_issue.days_open %></span>
+        </p>
+      </li>
+    <% end %>
+  </ul>
+
+</li>
+<li class="stage qa">
+<h2 class="stage_head">QA <%= @qa_issues.count %></h2>
+<ul class="card_list">
+  <% @qa_issues.each do |qa_issue| %>
+    <li class="stage_card">
+      <h3><%= qa_issue.title%></h3>
+      <p class="priority">
+        <span class="priority_label">PRIORITY</span>
+        <span class="priority_value <%= qa_issue.priority %>"><%= qa_issue.priority %></span>
+      </p>
+      <p class="assigned">
+        <span class="assiged_label">ASSIGNED</span>
+        <span class="assigned_value"><%= qa_issue.assignee.name %></span>
+      </p>
+      <p class="category">
+        <span class="category_label">CATEGORY</span>
+        <span class="category_value">Enhancement</span>
+      </p>
+      <p class="days_open">
+        <span class="days_open_label">DAYS OPEN</span>
+        <span class="days_open_value"><%= qa_issue.days_open %></span>
+      </p>
+    </li>
+  <% end %>
+</ul>
+</li>
+<li class="stage uat">
+<h2 class="stage_head">UAT <%= @uat_issues.count %></h2>
+<ul class="card_list">
+  <% @uat_issues.each do |uat_issue| %>
+    <li class="stage_card">
+      <h3><%= uat_issue.title%></h3>
+      <p class="priority">
+        <span class="priority_label">PRIORITY</span>
+        <span class="priority_value <%= uat_issue.priority %>"><%= uat_issue.priority %></span>
+      </p>
+      <p class="assigned">
+        <span class="assiged_label">ASSIGNED</span>
+        <span class="assigned_value"><%= uat_issue.assignee.name %></span>
+      </p>
+      <p class="category">
+        <span class="category_label">CATEGORY</span>
+        <span class="category_value">Enhancement</span>
+      </p>
+      <p class="days_open">
+        <span class="days_open_label">DAYS OPEN</span>
+        <span class="days_open_value"><%= uat_issue.days_open %></span>
+      </p>
+    </li>
+  <% end %>
+</ul>
+</li>
+</ul>
+</div>
+<div id="activity">
+    <h2>Activity</h2>
+    <ul class="activity_list">
+      <% @events.each do |event| %>
+      <li class="activity_card">
+        <span class="activity_actor"><%= event.actor %></span>
+        <span class="activity_action"><%= event.event_type %></span>
+        <span class="activity_issue"> Issue # <%= event.issue_number %></span>
+        <span class="activity_date"> on <%= event.created_on %></span>
+      </li>
+      <% end %>
+  </ul>
+  </div>

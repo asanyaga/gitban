@@ -1,0 +1,16 @@
+Issue
+* Number
+* Title
+* Priority Label
+* Assigned
+* Category
+* Days_Open
+* Date_Created
+* Date_Closed
+* Status
+
+Activity
+* Issue
+* Event
+* Actor
+* Date

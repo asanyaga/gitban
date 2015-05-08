@@ -6,7 +6,7 @@
     <ul class="card_list">
       <% @to_do_issues.each do |to_do_issue| %>
         <li class="stage_card">
-          <h3><%= to_do_issue.title%></h3>
+          <h3>#<%= to_do_issue.number %> <%= to_do_issue.title%></h3>
           <p class="priority">
             <span class="priority_label ">PRIORITY</span>
             <span class="priority_value <%= to_do_issue.priority %>"><%= to_do_issue.priority %></span>
@@ -17,7 +17,7 @@
           </p>
           <p class="category">
             <span class="category_label">CATEGORY</span>
-            <span class="category_value">Enhancement</span>
+            <span class="category_value"><%= to_do_issue.category %></span>
           </p>
           <p class="days_open">
             <span class="days_open_label">DAYS OPEN</span>
@@ -32,7 +32,7 @@
   <ul class="card_list">
     <% @in_progress_issues.each do |in_progress_issue| %>
       <li class="stage_card">
-        <h3><%= in_progress_issue.title%></h3>
+        <h3>#<%= in_progress_issue.number %> <%= in_progress_issue.title%></h3>
         <p class="priority">
           <span class="priority_label">PRIORITY</span>
           <span class="priority_value <%= in_progress_issue.priority %>"><%= in_progress_issue.priority %></span>
@@ -43,7 +43,7 @@
         </p>
         <p class="category">
           <span class="category_label">CATEGORY</span>
-          <span class="category_value">Enhancement</span>
+          <span class="category_value"><%= in_progress_issue.category %></span>
         </p>
         <p class="days_open">
           <span class="days_open_label">DAYS OPEN</span>
@@ -59,7 +59,7 @@
 <ul class="card_list">
   <% @qa_issues.each do |qa_issue| %>
     <li class="stage_card">
-      <h3><%= qa_issue.title%></h3>
+      <h3>#<%= qa_issue.number %> <%= qa_issue.title%></h3>
       <p class="priority">
         <span class="priority_label">PRIORITY</span>
         <span class="priority_value <%= qa_issue.priority %>"><%= qa_issue.priority %></span>
@@ -70,7 +70,7 @@
       </p>
       <p class="category">
         <span class="category_label">CATEGORY</span>
-        <span class="category_value">Enhancement</span>
+        <span class="category_value"><%= qa_issue.category %></span>
       </p>
       <p class="days_open">
         <span class="days_open_label">DAYS OPEN</span>
@@ -85,7 +85,7 @@
 <ul class="card_list">
   <% @uat_issues.each do |uat_issue| %>
     <li class="stage_card">
-      <h3><%= uat_issue.title%></h3>
+      <h3>#<%= uat_issue.number %> <%= uat_issue.title%></h3>
       <p class="priority">
         <span class="priority_label">PRIORITY</span>
         <span class="priority_value <%= uat_issue.priority %>"><%= uat_issue.priority %></span>
@@ -96,7 +96,7 @@
       </p>
       <p class="category">
         <span class="category_label">CATEGORY</span>
-        <span class="category_value">Enhancement</span>
+        <span class="category_value"><%= uat_issue.category %></span>
       </p>
       <p class="days_open">
         <span class="days_open_label">DAYS OPEN</span>
